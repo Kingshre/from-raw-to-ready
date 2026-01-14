@@ -1,0 +1,16 @@
+db:
+  url: "postgresql+psycopg2://ml:ml@localhost:5432/ml_pipeline"
+
+sources:
+  - name: "orders_csv"
+    type: "csv"
+    path: "data/raw/orders.csv"
+
+validation:
+  fail_on_error: true
+
+splits:
+  method: "time"
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15

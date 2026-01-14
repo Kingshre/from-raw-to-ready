@@ -1,0 +1,10 @@
+orders:
+  required_columns: [order_id, customer_id, order_ts, amount, status]
+  non_null: [order_id, customer_id, order_ts, amount]
+  unique: [order_id]
+  ranges:
+    amount:
+      min: 0
+      max: 100000
+  allowed_values:
+    status: ["paid", "refunded", "cancelled"]
